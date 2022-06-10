@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo hello, world
+        
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: 'Jormundgand.com'
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo deploy DEV
+        
+  deploy-hmlg:
+    runs-on: ubuntu-latest
+    environment:
+      name: hmlg
+      url: 'Jormundgand.com'
+    needs: deploy-dev
+    steps:
+      - name: Run a one-line script
+        run: echo deploy HMLG
+        
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: 'Jormundgand.com'
+    needs: deploy-hmlg
+    steps:
+      - name: Run a one-line script
+        run: echo deploy PROD
+        
+        
