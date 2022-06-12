@@ -6,3 +6,4 @@ resultBill = bill + bill * percent / 100
 result = resultBill / num_people
 total_per_person = round(result, 2)
 print(f'Each person should pay: ${total_per_person} ')
+
