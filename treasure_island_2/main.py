@@ -1,7 +1,7 @@
 import time
 
 
-def slowprint(texto, atraso=0.05direi):
+def slowprint(texto, atraso=0.05):
     for c in texto:
         print(c, end='', flush=True)
         time.sleep(atraso)
